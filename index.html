@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Encriptador</title>
+    
+</head>
+<body>
+    
+    <h1 class="logo"><img src="imagens/logo.png"></h1>
+    
+    <main>
+        <textarea class="input" id="usuarioDigita" placeholder="Digite seu texto" autofocus></textarea>
+        <textarea class="input" id="textoFormatado" disabled placeholder="Nenhuma mensagem digitada" name="textoFormatado"></textarea>
+        <h2>Apenas letras minúsculas e sem ascento.</h2>
+        <button id="botaoCrip" class="button">Criptografar</button>
+        <button id="botaoDescrip" class="button">Descriptografar</button>
+               
+    </main>
+    
+    <footer>Danilo Quintas - Desenvolvedor em formação</footer>
+
+
+    <script>
+
+        
+        function clicarCriptografar() {
+            var texto = input.value;
+            var textoCriptografado = texto.replace(/i/, "imes").replace(/e/g, "enter").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+            textoFormatado.value = textoCriptografado;
+        }
+
+        function clicarDescriptografar() {
+            var texto = input.value;
+            var textoDescriptografado = texto.replace(/ai/g, "a").replace(/enter/g, "e").replace(/imes/g, "i").replace(/ober/g, "o").replace(/ufat/g, "u");
+            textoFormatado.value = textoDescriptografado;
+        }
+
+        var input = document.querySelector("#usuarioDigita");
+        var botaoCrip = document.querySelector("#botaoCrip");
+        var botaoDescrip = document.querySelector("#botaoDescrip");
+        var textoFormatado = document.querySelector("#textoFormatado");
+        botaoCrip.onclick = clicarCriptografar;
+        botaoDescrip.onclick = clicarDescriptografar;
+
+        
+
+        </script>
+
+
+
+
+
+</body>
+</html>
